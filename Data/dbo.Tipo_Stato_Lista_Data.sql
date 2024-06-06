@@ -1,0 +1,7 @@
+INSERT INTO [dbo].[Tipo_Stato_Lista] ([Id_Tipo_Stato_Lista], [Descrizione]) VALUES (1, 'Nuova')
+INSERT INTO [dbo].[Tipo_Stato_Lista] ([Id_Tipo_Stato_Lista], [Descrizione]) VALUES (2, 'Simulata')
+INSERT INTO [dbo].[Tipo_Stato_Lista] ([Id_Tipo_Stato_Lista], [Descrizione]) VALUES (3, 'Sospesa')
+INSERT INTO [dbo].[Tipo_Stato_Lista] ([Id_Tipo_Stato_Lista], [Descrizione]) VALUES (4, 'Accettata')
+INSERT INTO [dbo].[Tipo_Stato_Lista] ([Id_Tipo_Stato_Lista], [Descrizione]) VALUES (5, 'Esecuzione')
+INSERT INTO [dbo].[Tipo_Stato_Lista] ([Id_Tipo_Stato_Lista], [Descrizione]) VALUES (6, 'Finita')
+INSERT INTO [dbo].[Tipo_Stato_Lista] ([Id_Tipo_Stato_Lista], [Descrizione]) VALUES (7, 'Chiusa')

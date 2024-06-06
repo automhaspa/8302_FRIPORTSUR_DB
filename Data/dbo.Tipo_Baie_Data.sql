@@ -1,0 +1,5 @@
+INSERT INTO [dbo].[Tipo_Baie] ([Id_Tipo_Baia], [Descrizione]) VALUES ('IN', 'INGRESSO')
+INSERT INTO [dbo].[Tipo_Baie] ([Id_Tipo_Baia], [Descrizione]) VALUES ('MU', 'MULTIPLA')
+INSERT INTO [dbo].[Tipo_Baie] ([Id_Tipo_Baia], [Descrizione]) VALUES ('PK', 'PICKING')
+INSERT INTO [dbo].[Tipo_Baie] ([Id_Tipo_Baia], [Descrizione]) VALUES ('RE', 'REJECT')
+INSERT INTO [dbo].[Tipo_Baie] ([Id_Tipo_Baia], [Descrizione]) VALUES ('US', 'USCITA')

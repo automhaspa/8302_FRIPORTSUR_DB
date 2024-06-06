@@ -1,0 +1,6 @@
+INSERT INTO [dbo].[Tipo_Stato_Stampante] ([Id_Stato_Stampante], [Descrizione]) VALUES (0, 'Unknow')
+INSERT INTO [dbo].[Tipo_Stato_Stampante] ([Id_Stato_Stampante], [Descrizione]) VALUES (1, 'Ready')
+INSERT INTO [dbo].[Tipo_Stato_Stampante] ([Id_Stato_Stampante], [Descrizione]) VALUES (2, 'Paused')
+INSERT INTO [dbo].[Tipo_Stato_Stampante] ([Id_Stato_Stampante], [Descrizione]) VALUES (3, 'HeadOpen')
+INSERT INTO [dbo].[Tipo_Stato_Stampante] ([Id_Stato_Stampante], [Descrizione]) VALUES (4, 'PaperOut')
+INSERT INTO [dbo].[Tipo_Stato_Stampante] ([Id_Stato_Stampante], [Descrizione]) VALUES (5, 'Error')

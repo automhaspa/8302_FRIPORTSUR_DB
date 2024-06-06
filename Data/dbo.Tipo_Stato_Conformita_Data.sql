@@ -1,0 +1,8 @@
+INSERT INTO [dbo].[Tipo_Stato_Conformita] ([Id_Tipo_Stato_Conformita], [Descrizione], [Non_Conformita_Accettazione], [Non_Conformita_Spedizione]) VALUES (0, N'NotVerified', 0, 1)
+INSERT INTO [dbo].[Tipo_Stato_Conformita] ([Id_Tipo_Stato_Conformita], [Descrizione], [Non_Conformita_Accettazione], [Non_Conformita_Spedizione]) VALUES (1, N'Ok', 0, 0)
+INSERT INTO [dbo].[Tipo_Stato_Conformita] ([Id_Tipo_Stato_Conformita], [Descrizione], [Non_Conformita_Accettazione], [Non_Conformita_Spedizione]) VALUES (2, N'ItemsDamaged', 1, 1)
+INSERT INTO [dbo].[Tipo_Stato_Conformita] ([Id_Tipo_Stato_Conformita], [Descrizione], [Non_Conformita_Accettazione], [Non_Conformita_Spedizione]) VALUES (3, N'ItemsPoorHygienic', 1, 1)
+INSERT INTO [dbo].[Tipo_Stato_Conformita] ([Id_Tipo_Stato_Conformita], [Descrizione], [Non_Conformita_Accettazione], [Non_Conformita_Spedizione]) VALUES (4, N'PalletDamaged', 1, 1)
+INSERT INTO [dbo].[Tipo_Stato_Conformita] ([Id_Tipo_Stato_Conformita], [Descrizione], [Non_Conformita_Accettazione], [Non_Conformita_Spedizione]) VALUES (5, N'MissingLabel', 1, 1)
+INSERT INTO [dbo].[Tipo_Stato_Conformita] ([Id_Tipo_Stato_Conformita], [Descrizione], [Non_Conformita_Accettazione], [Non_Conformita_Spedizione]) VALUES (6, N'UnreadableLabel', 1, 1)
+INSERT INTO [dbo].[Tipo_Stato_Conformita] ([Id_Tipo_Stato_Conformita], [Descrizione], [Non_Conformita_Accettazione], [Non_Conformita_Spedizione]) VALUES (7, N'PalletOversize', 1, 1)

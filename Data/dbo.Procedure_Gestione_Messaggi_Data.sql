@@ -1,0 +1,5 @@
+INSERT INTO [dbo].[Procedure_Gestione_Messaggi] ([ID_TIPO_MESSAGGIO], [PROCEDURA]) VALUES (11000, 'LuOnAsiCreateLuAndMission')
+INSERT INTO [dbo].[Procedure_Gestione_Messaggi] ([ID_TIPO_MESSAGGIO], [PROCEDURA]) VALUES (11001, 'AsiGetEmpty')
+INSERT INTO [dbo].[Procedure_Gestione_Messaggi] ([ID_TIPO_MESSAGGIO], [PROCEDURA]) VALUES (11013, 'AsiMoveToCompleted')
+INSERT INTO [dbo].[Procedure_Gestione_Messaggi] ([ID_TIPO_MESSAGGIO], [PROCEDURA]) VALUES (11023, 'MoveToCompleted')
+INSERT INTO [dbo].[Procedure_Gestione_Messaggi] ([ID_TIPO_MESSAGGIO], [PROCEDURA]) VALUES (11031, 'LuDataFromAsi')

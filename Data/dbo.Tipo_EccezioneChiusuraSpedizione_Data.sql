@@ -1,0 +1,6 @@
+INSERT INTO [dbo].[Tipo_EccezioneChiusuraSpedizione] ([Id], [Label], [Categoria]) VALUES (N'R001', N'Last minute add', 2)
+INSERT INTO [dbo].[Tipo_EccezioneChiusuraSpedizione] ([Id], [Label], [Categoria]) VALUES (N'R002', N'Substitution', 2)
+INSERT INTO [dbo].[Tipo_EccezioneChiusuraSpedizione] ([Id], [Label], [Categoria]) VALUES (N'R003', N'Pallet not found', 1)
+INSERT INTO [dbo].[Tipo_EccezioneChiusuraSpedizione] ([Id], [Label], [Categoria]) VALUES (N'R004', N'Pallet Damaged', 1)
+INSERT INTO [dbo].[Tipo_EccezioneChiusuraSpedizione] ([Id], [Label], [Categoria]) VALUES (N'R005', N'Pallet Temporary unavaiable', 1)
+INSERT INTO [dbo].[Tipo_EccezioneChiusuraSpedizione] ([Id], [Label], [Categoria]) VALUES (N'R006', N'Pallet unknow', 4)

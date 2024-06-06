@@ -1,0 +1,7 @@
+INSERT INTO [dbo].[Tipo_Logiche_Selezione] ([Id_Tipo_Logica_Selezione], [Descrizione]) VALUES (0, 'Default')
+INSERT INTO [dbo].[Tipo_Logiche_Selezione] ([Id_Tipo_Logica_Selezione], [Descrizione]) VALUES (1, 'ExactLoadingUnit')
+INSERT INTO [dbo].[Tipo_Logiche_Selezione] ([Id_Tipo_Logica_Selezione], [Descrizione]) VALUES (2, 'ExactExpirationDate')
+INSERT INTO [dbo].[Tipo_Logiche_Selezione] ([Id_Tipo_Logica_Selezione], [Descrizione]) VALUES (3, 'MinimumExpirationDate')
+INSERT INTO [dbo].[Tipo_Logiche_Selezione] ([Id_Tipo_Logica_Selezione], [Descrizione]) VALUES (4, 'MaximumExpirationDate')
+INSERT INTO [dbo].[Tipo_Logiche_Selezione] ([Id_Tipo_Logica_Selezione], [Descrizione]) VALUES (5, 'PartitionBased')
+INSERT INTO [dbo].[Tipo_Logiche_Selezione] ([Id_Tipo_Logica_Selezione], [Descrizione]) VALUES (6, 'PoolBased')
