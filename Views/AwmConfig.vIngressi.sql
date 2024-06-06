@@ -1,0 +1,10 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE VIEW [AwmConfig].[vIngressi] 
+AS		
+SELECT	1110711 AS Value, 'Picking 1L07' AS Description
+UNION
+SELECT	2050111 AS Value, 'Ingresso 2E01' AS Description
+GO

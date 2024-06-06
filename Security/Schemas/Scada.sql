@@ -1,0 +1,3 @@
+CREATE SCHEMA [Scada]
+AUTHORIZATION [dbo]
+GO

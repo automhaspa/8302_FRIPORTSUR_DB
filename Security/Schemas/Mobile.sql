@@ -1,0 +1,3 @@
+CREATE SCHEMA [Mobile]
+AUTHORIZATION [dbo]
+GO

@@ -1,0 +1,20 @@
+CREATE TABLE [dbo].[Componenti]
+(
+[ID_SOTTOAREA] [int] NOT NULL,
+[ID_COMPONENTE] [int] NOT NULL IDENTITY(1, 1),
+[DESCRIZIONE] [nvarchar] (50) COLLATE Latin1_General_CI_AS NOT NULL,
+[CODICE_ABBREVIATO] [varchar] (2) COLLATE Latin1_General_CI_AS NOT NULL,
+[ID_TIPO_COMPONENTE] [varchar] (1) COLLATE Latin1_General_CI_AS NOT NULL,
+[COMM_CHANNEL] [int] NOT NULL,
+[Tipo] [varchar] (50) COLLATE Latin1_General_CI_AS NULL,
+[Configurazione] [varchar] (4000) COLLATE Latin1_General_CI_AS NULL
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[Componenti] ADD CONSTRAINT [PK_Componenti_1] PRIMARY KEY CLUSTERED ([ID_COMPONENTE]) ON [PRIMARY]
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IX_Componenti] ON [dbo].[Componenti] ([ID_SOTTOAREA], [CODICE_ABBREVIATO]) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[Componenti] ADD CONSTRAINT [FK_Componenti_SottoAree] FOREIGN KEY ([ID_SOTTOAREA]) REFERENCES [dbo].[SottoAree] ([ID_SOTTOAREA])
+GO
+ALTER TABLE [dbo].[Componenti] ADD CONSTRAINT [FK_Componenti_Tipo_Componenti] FOREIGN KEY ([ID_TIPO_COMPONENTE]) REFERENCES [dbo].[Tipo_Componenti] ([ID_TIPO_COMPONENTE])
+GO
