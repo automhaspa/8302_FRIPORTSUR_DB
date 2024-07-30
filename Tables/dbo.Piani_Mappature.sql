@@ -8,7 +8,9 @@ CREATE TABLE [dbo].[Piani_Mappature]
 [Da_Piano] [int] NULL,
 [A_Piano] [int] NULL,
 [Da_Profondita] [int] NULL,
-[A_Profondita] [int] NULL
+[A_Profondita] [int] NULL,
+[CreationDatetime] [datetime] NULL,
+[LastUpdateDatetime] [datetime] NULL
 ) ON [PRIMARY]
 GO
 ALTER TABLE [dbo].[Piani_Mappature] ADD CONSTRAINT [PK_Piani_Mappature] PRIMARY KEY CLUSTERED ([Id_Piano_Mappatura]) ON [PRIMARY]

@@ -8,7 +8,10 @@ CREATE TABLE [dbo].[Aziende]
 [Cliente] [bit] NOT NULL,
 [Indice_Rotazione] [char] (1) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
 [Priorita] [int] NULL,
-[Attributi_Aggiuntivi] [xml] NULL
+[Attributi_Aggiuntivi] [xml] NULL,
+[Data_Creazione] [datetime] NULL,
+[Data_Importazione] [datetime] NULL,
+[Data_Aggiornamento] [datetime] NULL
 ) ON [PRIMARY]
 GO
 ALTER TABLE [dbo].[Aziende] ADD CONSTRAINT [PK_Aziende] PRIMARY KEY CLUSTERED ([Id_Azienda]) ON [PRIMARY]

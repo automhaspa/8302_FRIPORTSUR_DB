@@ -1,3 +1,4 @@
+INSERT INTO [dbo].[Tipo_Eventi] ([Id_Tipo_Evento], [Id_Tipo_Destinazione_Eventi], [Descrizione], [Id_Tipo_Gestore_Eventi], [Gestore], [Consenti_Presa_In_Carico]) VALUES (101, 2, 'Inbound', '', N'Blazor.Components.ModalComponents.GenericActionEvent', 1)
 INSERT INTO [dbo].[Tipo_Eventi] ([Id_Tipo_Evento], [Id_Tipo_Destinazione_Eventi], [Descrizione], [Id_Tipo_Gestore_Eventi], [Gestore], [Consenti_Presa_In_Carico]) VALUES (1, 2, 'Inbound', 'FRM', N'Blazor.Components.BarcodeComponent', 0)
 INSERT INTO [dbo].[Tipo_Eventi] ([Id_Tipo_Evento], [Id_Tipo_Destinazione_Eventi], [Descrizione], [Id_Tipo_Gestore_Eventi], [Gestore], [Consenti_Presa_In_Carico]) VALUES (2, 2, 'Outbound', 'FRM', N'Blazor.Components.DatatablePopup', 0)
 INSERT INTO [dbo].[Tipo_Eventi] ([Id_Tipo_Evento], [Id_Tipo_Destinazione_Eventi], [Descrizione], [Id_Tipo_Gestore_Eventi], [Gestore], [Consenti_Presa_In_Carico]) VALUES (3, 2, 'Picking', 'FRM', N'Blazor.Components.PickingWithBarcodeComponent', 0)

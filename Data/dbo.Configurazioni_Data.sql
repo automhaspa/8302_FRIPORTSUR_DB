@@ -1,3 +1,11 @@
+INSERT INTO [dbo].[Configurazioni] ([Chiave], [Valore]) VALUES (N'Blazor:PianiMappature:OrderParameter', N'[    {     "Name" : "LastUpdateDatetime",     "DbType":"DateTime",     "Descending" : true    }    ]')
+INSERT INTO [dbo].[Configurazioni] ([Chiave], [Valore]) VALUES (N'Blazor:Regole:HiddenFields', N'["Id_Regola"]')
+INSERT INTO [dbo].[Configurazioni] ([Chiave], [Valore]) VALUES (N'Blazor:Regole:OrderParameter', N'[{"Name" : "Nome","DbType":"Varchar","Descending" : false}]')
+INSERT INTO [dbo].[Configurazioni] ([Chiave], [Valore]) VALUES (N'Blazor:RegoleSequenzaDettaglio:Actions', N'[17]')
+INSERT INTO [dbo].[Configurazioni] ([Chiave], [Valore]) VALUES (N'Blazor:RegoleSequenzaDettaglio:ActionsHeader', N'[15,16]')
+INSERT INTO [dbo].[Configurazioni] ([Chiave], [Valore]) VALUES (N'Blazor:RegoleSequenzaDettaglio:HiddenFields', N'["Id_Sequenza_Regole","Id_Sequenza_Regole_Dettaglio"]')
+INSERT INTO [dbo].[Configurazioni] ([Chiave], [Valore]) VALUES (N'Blazor:RegoleSequenzaDettaglio:OrderParameter', N'[{"Name" : "Tipo_Missione","DbType":"Varchar","Descending" : false},{"Name" : "Sequenza","DbType":"Int","Descending" : false} ]')
+INSERT INTO [dbo].[Configurazioni] ([Chiave], [Valore]) VALUES (N'Blazor:RegoleSequenzaTestata:HiddenFields', N'["Id_Sequenza_Regole"]')
 INSERT INTO [dbo].[Configurazioni] ([Chiave], [Valore]) VALUES (N'Blazor:Alarms:DataTable:OrderParameter', N'[{"Name" : "Data","DbType":"DateTime","Descending" : false}]')
 INSERT INTO [dbo].[Configurazioni] ([Chiave], [Valore]) VALUES (N'Blazor:Articoli:DataTable:HiddenFields', N'["Id_Articolo"]')
 INSERT INTO [dbo].[Configurazioni] ([Chiave], [Valore]) VALUES (N'Blazor:Articoli:NavigateItem', N'[
@@ -309,7 +317,6 @@ INSERT INTO [dbo].[Configurazioni] ([Chiave], [Valore]) VALUES (N'Blazor:PianiMa
 INSERT INTO [dbo].[Configurazioni] ([Chiave], [Valore]) VALUES (N'Blazor:PianiMappature:DataTable:HiddenFields', N'["Id_Item_destinazione","Id_Partizione_Macchina"]')
 INSERT INTO [dbo].[Configurazioni] ([Chiave], [Valore]) VALUES (N'Blazor:Quote:DataTable:HiddenFields', N'["Id_Riferimento","Id_Partizione"]')
 INSERT INTO [dbo].[Configurazioni] ([Chiave], [Valore]) VALUES (N'Blazor:Rush:Actions', N'[40]')
-INSERT INTO [dbo].[Configurazioni] ([Chiave], [Valore]) VALUES (N'Blazor:ScadaLayout:Main', N'{"SvgSource" : "APP/SVG/7375/7375-20.svg","FloorFilterVisible":true, "Scale":150}')
 INSERT INTO [dbo].[Configurazioni] ([Chiave], [Valore]) VALUES (N'Blazor:ScadaLoadUnitInfo:FrontendActionsId', N'[1,2,11,25]')
 INSERT INTO [dbo].[Configurazioni] ([Chiave], [Valore]) VALUES (N'Blazor:ScadaLoadUnitInfo:NavigateItem', N'
 	[
@@ -372,5 +379,22 @@ INSERT INTO [dbo].[Configurazioni] ([Chiave], [Valore]) VALUES (N'Blazor:UdcTest
 INSERT INTO [dbo].[Configurazioni] ([Chiave], [Valore]) VALUES (N'Blazor:UdcTestata_Outbound:Actions', N'[1]')
 INSERT INTO [dbo].[Configurazioni] ([Chiave], [Valore]) VALUES (N'Blazor:UdcTestata_Outbound:DataTable:Actions', N'[2]')
 INSERT INTO [dbo].[Configurazioni] ([Chiave], [Valore]) VALUES (N'Blazor:UdcTestata_Outbound:DataTable:HiddenFields', N'["Id_Udc"]')
-INSERT INTO [dbo].[Configurazioni] ([Chiave], [Valore]) VALUES (N'CoreService:CommunicationChannels', N'[      {          "id": 1,          "description": "a110",          "communicationChannelType": "UdpCommunicationChannel",          "configuration": {              "PlcIpAddress": "10.45.252.70",              "UdpReceivePort": 2012,              "UdpSendPort": 2011,              "AckTimeOut": 5,              "StayingAliveTime": 8,              "ReceivedMessageDefaultPlant": "COKE",              "ReceivedMessageDefaultWarehouse": "COKE"          }      },      {          "id": 2,          "description": "a210",          "communicationChannelType": "UdpCommunicationChannel",          "configuration": {              "PlcIpAddress": "10.45.252.70",              "UdpReceivePort": 2014,              "UdpSendPort": 2013,              "AckTimeOut": 5,              "StayingAliveTime": 8,              "ReceivedMessageDefaultPlant": "COKE",              "ReceivedMessageDefaultWarehouse": "COKE"          }      },      {          "id": 3,          "description": "a500",          "communicationChannelType": "UdpCommunicationChannel",          "configuration": {              "PlcIpAddress": "10.45.252.70",              "UdpReceivePort": 2016,              "UdpSendPort": 2015,              "AckTimeOut": 5,              "StayingAliveTime": 8,              "ReceivedMessageDefaultPlant": "COKE",              "ReceivedMessageDefaultWarehouse": "COKE"          }      }  ]')
 INSERT INTO [dbo].[Configurazioni] ([Chiave], [Valore]) VALUES (N'PhysicalStateManager', N'{"StopSubareaForSequenceReset": false}')
+INSERT INTO [dbo].[Configurazioni] ([Chiave], [Valore]) VALUES (N'Blazor:ScadaLayout:Main', N'{"SvgSource" : "Scada/8302/Friportsur.Scada.svg","FloorFilterVisible":true, "Scale":278}')
+INSERT INTO [dbo].[Configurazioni] ([Chiave], [Valore]) VALUES (N'CoreService:CommunicationChannels', N'[
+    {
+        "id": 1,
+        "description": "QG1",
+        "communicationChannelType": "MockUdpCommunicationChannel",
+        "configuration": {
+            "PlcIpAddress": "172.31.1.1",
+            "UdpReceivePort": 2012,
+            "UdpSendPort": 2011,
+            "AckTimeOut": 5,
+            "StayingAliveTime": 8,
+            "ReceivedMessageDefaultPlant": "0001",
+            "ReceivedMessageDefaultWarehouse": "0001",
+            "LuOnAsi":["2A01"]
+        }
+    }
+]')

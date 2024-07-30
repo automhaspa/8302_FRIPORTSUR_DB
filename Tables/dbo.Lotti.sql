@@ -8,7 +8,8 @@ CREATE TABLE [dbo].[Lotti]
 [Data_Inserimento] [datetime] NULL,
 [Data_Produzione] [datetime] NULL,
 [Data_Scadenza] [datetime] NULL,
-[Nr_Bancali] [int] NULL
+[Nr_Bancali] [int] NULL,
+[Data_Aggiornamento] [datetime] NULL
 ) ON [PRIMARY]
 GO
 ALTER TABLE [dbo].[Lotti] ADD CONSTRAINT [PK_Lotti] PRIMARY KEY CLUSTERED ([Id_Lotto]) ON [PRIMARY]

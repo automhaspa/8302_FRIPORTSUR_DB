@@ -8,14 +8,12 @@ AS
 WITH Contentuti AS
 (
 	SELECT	UD.Id_Udc,
-			CASE WHEN COUNT(DISTINCT UD.Id_Articolo) > 1			THEN -1 ELSE MIN(UD.Id_Articolo)			END AS Articolo,			
-			CASE WHEN COUNT(DISTINCT UD.Id_Lotto_Stoccaggio) > 1	THEN -1 ELSE MIN(UD.Id_Lotto_Stoccaggio)	END AS Lotto--,					
-			--CASE WHEN COUNT(DISTINCT UD.Id_Azienda_Cliente) > 1		THEN -1 ELSE MIN(UD.Id_Azienda_Cliente)		END AS Owner
+			CASE WHEN COUNT(DISTINCT UD.Id_Articolo) > 1			THEN -1 ELSE MIN(UD.Id_Articolo)			END AS Articolo,
+			CASE WHEN COUNT(DISTINCT UD.Id_Lotto_Stoccaggio) > 1	THEN -1 ELSE MIN(UD.Id_Lotto_Stoccaggio)	END AS Lotto
 	FROM	dbo.Udc_Dettaglio UD	WITH(NOLOCK)
-	GROUP 
-	BY		UD.Id_Udc	
+	GROUP
+		BY	UD.Id_Udc
 )
-
 SELECT	CONCAT(CT.DESCRIZIONE,'.',SCT.CODICE_ABBREVIATO,'.',PT.CODICE_ABBREVIATO)			AS	SORG,
         ISNULL(UT.Id_Udc,0)																	AS	Id_Udc,
         UT.Codice_Udc,
@@ -25,14 +23,13 @@ SELECT	CONCAT(CT.DESCRIZIONE,'.',SCT.CODICE_ABBREVIATO,'.',PT.CODICE_ABBREVIATO)
 		(
 			CASE
 					WHEN CT.ID_TIPO_COMPONENTE = 'S'	THEN  UP.Z - UT.Profondita / 2
-					WHEN CT.ID_TIPO_COMPONENTE = 'G'	THEN  PT.PROFONDITA - UP.Z 
+					WHEN CT.ID_TIPO_COMPONENTE = 'G'	THEN  PT.PROFONDITA - UP.Z
 					ELSE NULL
 			END AS INT
 		)																					AS	QuotaDeposito,
 		CASE
 			WHEN UD.Id_Udc IS NULL THEN '#ffffff'
-			--ELSE '#' + CONVERT(VARCHAR(6),HASHBYTES('SHA1',  CONCAT(UD.Articolo,'_', UD.Lotto)),2) 
-			ELSE '#' + CONVERT(VARCHAR(6),HASHBYTES('SHA1',  CAST(UD.Articolo AS VARCHAR(MAX))),2) 
+			ELSE '#' + CONVERT(VARCHAR(6),HASHBYTES('SHA1',  CAST(UD.Articolo AS VARCHAR(MAX))),2)
 		END																					AS	 udcColour,
         RS.Id_Missione																		AS	 Id_Percorso,
         RS.Id_Sequenza_Percorso																AS	 Sequenza_Percorso,
@@ -45,8 +42,8 @@ SELECT	CONCAT(CT.DESCRIZIONE,'.',SCT.CODICE_ABBREVIATO,'.',PT.CODICE_ABBREVIATO)
         69																								ALTEZZA,
         CAST(0 AS BIT)							Blocco_Udc,
         PT.Motivo_Blocco,
-        TU.Descrizione							Tipo_Udc,		
-		0																							AS	Rotation,
+        TU.Descrizione							Tipo_Udc,
+		0										Rotation,
 		NULLIF(CT.ID_COMPONENTE,0)				ID_COMPONENTE,
 		NULLIF(PT.ID_PARTIZIONE,0)				ID_PARTIZIONE,
         NULLIF
@@ -65,30 +62,54 @@ SELECT	CONCAT(CT.DESCRIZIONE,'.',SCT.CODICE_ABBREVIATO,'.',PT.CODICE_ABBREVIATO)
         0										PosX,
 		SCT.PIANO								PIANO,
         SCT.COLONNA,
-        NULLIF(PT.LARGHEZZA,0)					posWidth, 
+        NULLIF(PT.LARGHEZZA,0)					posWidth,
         NULLIF(PT.Profondita,0)					posLength,
         NULLIF(PT.Altezza,0)					posHeight,
 
-        CASE	WHEN ISNULL(PT.LOCKED_INFEED,0) = 1 AND ISNULL(PT.LOCKED_OUTFEED,0) = 1 
-				THEN CAST(1 AS BIT)
-				ELSE CAST(0 AS BIT)
-		END										AS	LOCKED,
-
-		CASE	WHEN ISNULL(PT.LOCKED_INFEED,0) = 1 AND ISNULL(PT.LOCKED_OUTFEED,0) = 0 
-			THEN CAST(1 AS BIT)
-			ELSE CAST(0 AS BIT)
-		END										AS	LOCKED_INFEED,
-
-		CASE WHEN ISNULL(PT.LOCKED_INFEED,0) = 0 AND ISNULL(PT.LOCKED_OUTFEED,0) = 1 
-				THEN CONVERT(BIT,1)
-				ELSE CONVERT(BIT,0)
-        END										AS	LOCKED_OUTFEED,
-
         CASE
-			WHEN CT.Tipo = 'RotatingConveyor'				THEN			'App/SVG/Components/ralla.svg'
-			WHEN CT.ID_TIPO_COMPONENTE = 'R'				THEN			'App/SVG/Components/catenaria90.svg'
-			WHEN CT.ID_TIPO_COMPONENTE = 'L'				THEN			',App/SVG/Components/catenaria.svg'
-			WHEN CT.ID_TIPO_COMPONENTE = 'C'				THEN			'App/SVG/Components/navetta.svg'
+			WHEN ISNULL(PT.LOCKED_INFEED,0) = 1 AND ISNULL(PT.LOCKED_OUTFEED,0) = 1
+				THEN CAST(1 AS BIT)
+			ELSE CAST(0 AS BIT)
+		END										LOCKED,
+		CASE
+			WHEN ISNULL(PT.LOCKED_INFEED,0) = 1 AND ISNULL(PT.LOCKED_OUTFEED,0) = 0
+				THEN CAST(1 AS BIT)
+			ELSE CAST(0 AS BIT)
+		END										LOCKED_INFEED,
+		CASE
+			WHEN ISNULL(PT.LOCKED_INFEED,0) = 0 AND ISNULL(PT.LOCKED_OUTFEED,0) = 1
+				THEN CONVERT(BIT,1)
+			ELSE CONVERT(BIT,0)
+        END										LOCKED_OUTFEED,
+        CASE
+			WHEN CT.ID_TIPO_COMPONENTE = 'R' THEN 
+			CASE 
+				WHEN CT.ID_COMPONENTE IN
+				(
+					11604,11610,11611,11623,11618,11620,
+					20203,20102,20104,20105,20108,20110,
+					20302,20304,20305,20307,20309
+				)								THEN			'App/SVG/Components/rulliera/rulliera90.svg,App/SVG/Components/catenaria.svg'
+				WHEN CT.ID_COMPONENTE IN
+				(
+					20303,20201,20202,20103,20109,
+					11621,11622
+				)								
+				OR CT.ID_COMPONENTE BETWEEN 11605 AND 11608
+				OR CT.ID_COMPONENTE BETWEEN 11612 AND 11617
+				OR CT.ID_SOTTOAREA IN (101,102,103,104,105,106,107,108,109,110,111,112,113,114,115)
+												THEN			'App/SVG/Components/catenaria.svg'
+				ELSE 'App/SVG/Components/rulliera/rulliera90.svg'
+			END
+			WHEN CT.ID_SOTTOAREA IN (203,116)	THEN			'App/SVG/Components/rulliera/rulliera90.svg'
+			
+			WHEN CT.Tipo = 'RotatingConveyor'	THEN			'App/SVG/Components/ralla.svg'
+			WHEN CT.ID_TIPO_COMPONENTE = 'L'	THEN
+				CASE
+					WHEN CT.ID_SOTTOAREA IN (115,114) THEN 'App/SVG/Components/lifter90.svg,App/SVG/Components/catenaria.svg'
+					ELSE 'App/SVG/Components/lifter270.svg,App/SVG/Components/catenaria.svg'
+				END
+			WHEN CT.ID_TIPO_COMPONENTE = 'C'	THEN			'App/SVG/Components/navetta.svg'
 			ELSE ''
 		END									svg,
 		NULL								svgUdc,
